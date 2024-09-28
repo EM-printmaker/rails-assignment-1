@@ -4,7 +4,7 @@ class CreateReservations < ActiveRecord::Migration[6.1]
       t.string :title
       t.datetime :start_date
       t.datetime :end_date
-      t.boolean :all_day
+      t.boolean :all_day, null: false, default: false
       t.text :memo
 
       t.timestamps
