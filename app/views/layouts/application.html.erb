@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Schedule</title>
+    <title>スケジュール管理アプリ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,8 +12,19 @@
   </head>
 
   <body>
-    <header>
+    <header class="header">
+        <nav class="navbar fixed-top navbar-dark bg-dark justify-content-center">
+          <%= link_to "スケジュール管理アプリ", :reservations, class: "navbar-brand header__title"%>
+        </nav>
     </header>
+    <main class="main">
       <%= yield %>
+    </main>
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer__today-date">本日の日付:<span>2024/10/05</span></p>
+      <p class="footer__plan-sum">予定合計<span class="footer__plan-sum--size">1</span>件</p>
+    </div>
+  </footer>
   </body>
 </html>

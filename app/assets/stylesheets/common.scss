@@ -1,0 +1,80 @@
+html,body {
+  height: 100%;
+}
+
+body {
+  letter-spacing: 0.05rem;
+}
+
+.header {
+  height: 56px;
+  &__title {
+    letter-spacing: 0.1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+.main {
+  padding: 24px 16px;
+  margin: 0 auto;
+  max-width: 960px;
+}
+.main-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+}
+
+.add-button {
+  letter-spacing: 0.05rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem 0.5rem 0.8rem;
+  &__icon {
+    margin-right: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.table-wrap {
+  margin-top: 1rem;
+  white-space: nowrap;
+}
+
+.table {
+  font-size: 0.9rem;
+}
+
+.footer {
+  position: sticky;
+  top: 100vh;
+  top: 100dvh;
+  p {
+    margin-bottom: 0;
+  }
+  &__today-date {
+    color: #888;
+  }
+  &__plan-sum {
+    font-weight: 600;
+    &--size {
+      font-size: 1.5rem;
+      padding: 0 2px;
+    }
+  }
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 16px;
+  margin: 0 auto;
+  max-width: 960px;
+}

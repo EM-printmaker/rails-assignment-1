@@ -1,2 +1,60 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<div class="main-title">
+  <h1 class="main-title__text">予定一覧</h1>
+  <%= link_to :new_reservation do %>
+    <button type="button" class="btn btn-info add-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill add-button__icon" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+    </svg>
+    新規追加
+    </button>
+  <% end %>
+</div>
+<div class="table-wrap table-responsive table-hover">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">タイトル</th>
+        <th scope="col">開始日</th>
+        <th scope="col">終了日</th>
+        <th scope="col">終日</th>
+        <th scope="col">更新日時</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>テスト</td>
+        <td>2024/03/20</td>
+        <td>2024/03/20</td>
+        <td>◯</td>
+        <td>2024/09/19<br>13:43</td>
+        <td><a href="#" class="text-info">詳細</a></td>
+        <td><a href="#" class="text-info">編集</a></td>
+        <td><a href="#" class="text-info">削除</a></td>
+      </tr>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <th scope="row"><%= reservation.id %></th>
+          <td><%= reservation.title %></td>
+          <td><%= reservation.start_date %></td>
+          <td><%= reservation.end_date %></td>
+          <td><%= reservation.all_day %></td>
+          <td><%= reservation.updated_at %></td>
+          <td>
+            <%= link_to "詳細", reservation, class: "text-info" %>
+          </td>
+          <td>
+            <%= link_to "編集", [:edit, reservation], class: "text-info" %>
+          </td>
+          <td>
+            <%= link_to "削除", reservation, method: :delete, class: "text-info", data: { confirm: "本当に削除しますか？" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
