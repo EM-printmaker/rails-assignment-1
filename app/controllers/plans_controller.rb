@@ -1,6 +1,6 @@
-class ReservationsController < ApplicationController
+class PlansController < ApplicationController
   def index
-    @reservations = Reservation.all
+    @plans = Plan.all
   end
 
   def new
