@@ -49,7 +49,7 @@ ol,ul {
   }
 }
 
-.table-wrap {
+.table-wrapper {
   margin-top: 1rem;
   white-space: nowrap;
 }
@@ -107,11 +107,41 @@ ol,ul {
   max-width: 960px;
 }
 
-// NEW
+// NEW,SHOW,EDIT
 
-.new-wrapper {
+.main-wrapper {
   margin: 24px auto;
   max-width: 540px;
+}
+
+.show-table-wrapper {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+}
+
+.center-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-button {
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.show-table {
+  th {
+    width: 150px;
+  }
+  tr:last-child {
+    border-bottom: 1px solid #dee2e6;
+    th,td {
+      padding-bottom: 40px;
+    }
+  }
 }
 
 // FORM
