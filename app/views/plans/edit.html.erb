@@ -1,8 +1,8 @@
 <div class="main-wrapper">
-  <h1 class="main-title__text">予定の新規追加</h1>
+  <h1 class="main-title__text">予定の編集</h1>
 
   <div class="form-container">
-    <%= form_with(model: @plan, url: plans_path, class: "form") do |f| %>
+    <%= form_with(model: @plan, class: "form") do |f| %>
       <div class="form-group">
         <%= f.label :title ,"タイトル"%>
         <%= f.text_field :title, class: "form-control" %>
