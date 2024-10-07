@@ -58,6 +58,26 @@ ol,ul {
   font-size: 0.9rem;
 }
 
+.delete-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.modal-header {
+  border: none;
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.modal-body {
+  padding: 1rem 1.8rem;
+}
+
+.modal-footer {
+  border: none;
+  padding: 0 1.5rem 1rem;
+}
+
 // notice
 .notice-container {
   position: fixed;

@@ -37,7 +37,7 @@
           <td><%= plan.start_date.to_s(:datetime_jp) %></td>
           <td><%= plan.end_date.to_s(:datetime_jp) %></td>
           <% if plan.all_day %>
-            <td>◯</td>
+            <td class="text-center">◯</td>
           <% else %>
             <td></td>
           <% end %>
@@ -52,7 +52,8 @@
             <%= link_to "編集", [:edit, plan], class: "text-info" %>
           </td>
           <td>
-            <%= link_to "削除", plan, method: :delete, class: "text-info", data: { confirm: "本当に削除しますか？" } %>
+            <button type="button" data-toggle="modal" data-target="#exampleModalCenter<%= plan.id %>" class="text-info delete-button">削除</button>
+            <%= render partial: "shared/confirm_modal", locals: { plan: plan } %>
           </td>
         </tr>
       <% end %>
