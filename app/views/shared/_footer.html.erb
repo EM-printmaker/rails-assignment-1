@@ -1,6 +1,6 @@
 <footer class="footer">
   <div class="footer-container">
-    <p class="footer__today-date">本日の日付:<span>2024/10/05</span></p>
-    <p class="footer__plan-sum">予定合計<span class="footer__plan-sum--size">1</span>件</p>
+    <p class="footer__today-date">本日の日付:<%= Date.current.strftime('%Y/%m/%d') %></p>
+    <p class="footer__plan-sum">予定合計<span class="footer__plan-sum--size"><%= Plan.count %></span>件</p>
   </div>
 </footer>
