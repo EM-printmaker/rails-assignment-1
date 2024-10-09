@@ -78,7 +78,7 @@ ol,ul {
   padding: 0 1.5rem 1rem;
 }
 
-// notice
+// notice,alert
 .notice-container {
   position: fixed;
   bottom: 1.5rem;
@@ -90,9 +90,29 @@ ol,ul {
   width: fit-content;
   background-color: rgba(23, 162, 184, 0.9);
   box-shadow: 0px 10px 10px -8px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+.alert-container {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  border-radius: 0.25rem;
+  padding: 0.4rem 0.8rem;
+  width: fit-content;
+  background-color: rgba(220, 53, 69, 1);
+  box-shadow: 0px 10px 10px -8px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 .notice {
+  color: #fff;
+  margin: 0;
+}
+
+.alert-text {
   color: #fff;
   margin: 0;
 }
@@ -254,4 +274,10 @@ textarea.form-control {
   &--border {
     border: 1px solid #ced4da;
   }
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
 }
