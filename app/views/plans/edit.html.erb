@@ -1,0 +1,59 @@
+<div class="main-wrapper">
+  <h1 class="main-title__text">予定の編集</h1>
+
+  <% if flash[:alert] %>
+    <div class="alert-container hide">
+      <p class="alert-text"><%= flash[:alert] %></p>
+    </div>
+  <% end %>
+
+  <div class="form-container">
+    <%= form_with(model: @plan, class: "form") do |f| %>
+    <% if @plan.errors.any? %>
+    <% end %>
+      <div class="form-group">
+        <%= f.label :title ,"タイトル"%>
+        <%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
+        <% if @plan.errors.include?(:title) %>
+          <p class="error-message"><%= @plan.errors.full_messages_for(:title).first %></p>
+        <% end %>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.label :start_date ,"開始日" %>
+          <div class="form__date">
+            <%= f.text_field :start_date, class: "form-control datepicker", value: "#{@plan.start_date.strftime("%Y/%m/%d")}" %>
+          </div>
+          <% if @plan.errors.include?(:start_date) %>
+            <p class="error-message"><%= @plan.errors.full_messages_for(:start_date).first %></p>
+          <% end %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.label :end_date ,"終了日" %>
+          <div class="form__date">
+            <%= f.text_field :end_date, class: "form-control datepicker", value: "#{@plan.end_date.strftime("%Y/%m/%d")}" %>
+          </div>
+          <% if @plan.errors.include?(:end_date) %>
+            <p class="error-message"><%= @plan.errors.full_messages_for(:end_date).first %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="form-check form__check-box">
+        <%= f.check_box :all_day, class: "form-check-input" %>
+        <%= f.label :all_day ,"終日の場合はチェックを入れます", class: "form__check-box-label" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :memo ,"スケジュールメモ" %>
+        <%= f.text_area :memo, class: "form-control", placeholder: "メモを入力する" %>
+        <% if @plan.errors.include?(:memo) %>
+          <p class="error-message"><%= @plan.errors.full_messages_for(:memo).first %></p>
+        <% end %>
+      </div>
+
+      <div class="form-container__buttons">
+          <%= link_to "キャンセル", :plans, class: "btn btn-light button button--border"%>
+          <%= f.submit "保存", class: "btn btn-info button"%>
+      </div>
+    <% end %>
+  </div>
+</div>

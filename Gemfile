@@ -54,3 +54,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 追加
+gem 'mutex_m'
+gem 'base64'
+gem 'bigdecimal'
+gem 'psych', '~> 3.1'
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'
+gem 'popper_js', '~> 1.9', '>= 1.9.9'
+gem 'rails-i18n'
+gem 'bootstrap-datepicker-rails', '~> 1.6', '>= 1.6.1.1'

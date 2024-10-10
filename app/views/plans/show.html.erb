@@ -1,0 +1,38 @@
+<div class="main-wrapper">
+  <div class="main-title">
+    <h2 class="main-title__text"><%= @plan.title %></h2>
+    <%= link_to :edit_plan do %>
+      <button type="button" class="btn btn-info edit-button">
+      編集
+      </button>
+    <% end %>
+  </div>
+  
+  <div class="show-table-wrapper">
+    <table class="table show-table">
+      <tr>
+        <th>開始日</th>
+        <td><%= @plan.start_date.to_s(:datetime_jp) %></td>
+      </tr>
+      <tr>
+        <th>終了日</th>
+        <td><%= @plan.end_date.to_s(:datetime_jp) %></td>
+      </tr>
+      <tr>
+        <th>終日</th>
+        <% if @plan.all_day %>
+          <td>◯</td>
+        <% else %>
+          <td></td>
+        <% end %>
+      </tr>
+      <tr>
+        <th>スケジュールメモ</th>
+        <td><%= @plan.memo %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="center-button-wrapper">
+    <%= link_to "戻る", :plans, class: "btn btn-light button button--border"%>
+  </div>
+</div>

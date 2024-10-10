@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Schedule</title>
+    <title>スケジュール管理アプリ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header">
+        <nav class="navbar fixed-top navbar-dark bg-dark justify-content-center">
+          <%= link_to "スケジュール管理アプリ", :plans, class: "navbar-brand header__title"%>
+        </nav>
+    </header>
+    <main class="main">
+      <%= yield %>
+    </main>
+    <% if current_page?(plans_path) %>
+      <%= render "shared/footer" %>
+    <% end %>
   </body>
 </html>
